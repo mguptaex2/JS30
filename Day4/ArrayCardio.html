@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Cardio</title>
+</head>
+<body>
+    <script>
+        const inventors = [
+            {first: 'Albert', last: 'Einstein', year: '1879', passed: '1965'},
+            {first: 'Johannes', last: 'Keppler', year:'1987', passed: '2002'},
+            {first: 'Nicolus', last: 'Copernix', year:'1487', passed: '1576'},
+            {first: 'Max', last: 'Planck', year:'1618', passed: '1692'},
+            {first: 'Edwin', last: 'Aldrin', year:'1800', passed: '1856'},
+            {first: 'abc', last: 'xyz', year:'1987', passed: '2012'},
+        ];
+        const people = ['fbf, grht','gr, grht','aqswsd, dvf','swe, rht','grbg, egrg','rrtt, fdbfg',
+                        'fegr, wfegr','efgfe, fgg','jyhtg, fdg','xcfbg, fbgnhggr','htjyj, ffgbn',
+                        'dwfegrfgnf, egrhhg','ddf, egngh','gbgn, drb'];
+        //Array.prototype.filter()
+        //1)Filter the list of inventors for those who were born in the 1800's
+        const inventorAge = inventors.filter(inventor => inventor.year >= 1800 && inventor.year < 1900); 
+        console.log(inventorAge); 
+        console.table(inventorAge);
+        //Array.prototype.map()
+        //2) Give us an array of the inventors first and last names
+        const inventorName = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+        console.log(inventorName);
+        console.table(inventorName);
+        //Array.prototype.sort()
+        //3) Sort the inventors by birthdate, oldest to youngest
+        const sortAge = inventors.sort((firstInventor, secondInventor) => firstInventor.year > secondInventor.year ? 1: -1);
+        console.log(sortAge);
+        console.table(sortAge); 
+        //Array.prototype.reduce()
+        //4) How many years did all the inventors live
+        const totalAge = inventors.reduce((total, inventor) => { return total + (inventor.passed - inventor.year)},0);
+        console.log(totalAge);
+        //5) Sort the inventors by years lived
+        const sortInventor = inventors.sort((first,second) => (first.passed - first.year) > (second.passed - second.year) ? 1: -1);
+        console.log(sortInventor);
+        console.table(sortInventor);
+        console.log(sortInventor.map(inventor => inventor.passed - inventor.year));
+        //6) Sort the people alphabetically by last name
+        const name = people.sort(function(lastOne,nextOne) {
+            const [last1,first1] = lastOne.split(", ");
+            const [last2,first2] = nextOne.split(", ");
+            return last1 > last2 ? 1 : -1;
+        });
+        console.log(name);
+        //7) Sum up the instances of each of these
+        const data = ['car','car','truck','truck','bike','walk','car','van','bike','car','car','van','bike','truck'];
+        const transport = data.reduce(function(object,item) {
+            if(!object[item]) {
+                object[item] = 0;
+            }
+            object[item]++;
+            return object;
+        },{});
+        console.log(transport);
+    </script>
+</body>
+</html>
