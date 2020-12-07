@@ -1,0 +1,17 @@
+body {
+    background-color: royalblue;
+}
+.typeahead {
+    text-align: center;
+}
+li {
+list-style-type: none;
+border-radius: 2em;
+background-color: yellow;
+margin-left: 40%;
+margin-right: 40%;
+margin-bottom: 10px;
+}
+.h1 {
+     background-color:red; 
+}
