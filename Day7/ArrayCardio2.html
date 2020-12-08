@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Cardio 2</title>
+</head>
+<body>
+    <script>
+        const people = [
+            {name: 'Albert', year: '1879'},
+            {name: 'Johannes', year:'1987'},
+            {name: 'Nicolus', year:'1487'},
+            {name: 'Max', year:'1618'},
+            {name: 'Edwin', year:'2002'},
+            {name: 'abc', year:'1987'},
+        ];
+        const comments = [
+            {text: 'Love this!', id: '34567'},
+            {text: 'Super good', id:'341987'},
+            {text: 'you are best', id:'5561487'},
+            {text: 'Max is value', id:'145618'},
+            {text: 'good, better, best', id:'134800'},
+            {text: 'abc to xyz', id:'134987'},
+        ];
+        // Array.prototype.some // Is atleast one person 19?
+        const Adultperson = people.some(person => new Date().getFullYear() - person.year > 18);
+        console.log(Adultperson);
+        // Array.prototype.every // Is every person 19?
+        const everyPerson = people.every(person => new Date().getFullYear() - person.year > 18);
+        console.log(everyPerson);
+        // Array.prototype.find 
+        // find is like filter, but instead returns just the one you are looking for
+        // find the comment with id of 134987
+        const comment = comments.find(comm => comm.id == 134987);
+        console.log(comment);
+        // Array.prototype.findIndex()
+        // Find the comment with this Id
+        // delete the comment with id of 145618
+        const commentIndex = comments.findIndex(comm => comm.id == 145618);
+        console.log(commentIndex);
+        comments.splice(commentIndex, 1);
+        // const newComments = [
+        //     ...comments.slice(0, commentIndex),
+        //     ...comments.slice(commentIndex + 1)
+        // ];
+        // console.table(newComments);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
