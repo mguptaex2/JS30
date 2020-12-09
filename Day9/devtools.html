@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev tools</title>
+</head>
+<body>
+    <p onclick="makeGreen()" >Break down</p>
+    <script>
+        const dogs = [{name: 'Bruno', age: 5}, {name: 'Jackie', age: 2}];
+        function makeGreen() {
+            const p = document.querySelector('p');
+            p.style.color = "#ff0000";
+            p.style.fontSize = '40px';
+        }
+        //Interpolated
+        console.log("Hi I am %s", "Megha");
+        //styled
+        console.log("%c I am some style",'font-size:50px');
+        //warning
+        console.warn("Warning!");
+        //error
+        console.error("Error");
+        //info
+        console.info("This is info");
+        //assert
+        console.assert(2 == 3, 'They are not equal');
+        //Viewing DOM elements
+        var p = document.querySelector("p");
+        console.log(p);
+        console.dir(p);
+        //Grouping Together
+        dogs.forEach(dog => {
+            console.group(`${dog.name}`);
+            console.log(`${dog.name}`);
+            console.log(`${dog.name} is ${dog.age} years old`);
+            console.groupEnd(`${dog.name}`);
+        });
+        //count
+        console.count("dog");
+        //timing
+        console.time("fetching data");
+        fetch("https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json")
+        .then(data => data.json())
+        .then(data => {
+            console.timeEnd("fetching data");
+            console.log(data);
+        })
+    </script>
+</body>
+</html>
