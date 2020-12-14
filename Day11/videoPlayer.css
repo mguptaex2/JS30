@@ -1,0 +1,20 @@
+.video {
+    width: 60%; 
+}
+.progress { 
+    background-color: rgb(192, 192, 192); 
+    width: 60%; 
+    border-radius: 5px; 
+    max-width: 60%;
+} 
+.progress--filled { 
+    
+    background-color: rgb(116, 194, 92); 
+    color: white; 
+    padding: 0.20em; 
+    border-radius: 5px; 
+   
+} 
+.bar { 
+     width: 40%; 
+} 
