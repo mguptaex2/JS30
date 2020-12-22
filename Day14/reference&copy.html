@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object and arrays - Reference and copy</title>
+</head>
+<body>
+    <script>
+        let age = 100;
+        let age2 = age;
+        console.log(age, age2);
+        age = 200;
+        console.log(age, age2);
+
+
+        let name = 'Megha';
+        let name2 = name;
+        console.log(name, name2);
+        name = 'megha gupta';
+        console.log(name, name2);
+
+        const players = ['abc', 'bfc','fdf','bgb'];
+        const team = players;
+        console.log(players, team);
+        team[2] = 'erfg';
+        console.log(players,team); // It updates the original array also
+        //To create a copy of array there are many methods
+        const team2 = players.slice();
+        const team3 = [].concat(players);
+        const team4 = [...players];
+        const team5 = Array.from(players);
+        team5[2] = 'cool';
+        console.log(players,team5);
+        //For Objects
+        const person = {
+            name: 'megha',
+            age: 24
+        };
+        const people = person;
+        people.number = 20;
+        console.log(people);
+        // how do we make a copy without changing actual object
+        const cap2 = Object.assign({},person,{number:99});
+        console.log(cap2);
+        
+    </script>
+</body>
+</html>
