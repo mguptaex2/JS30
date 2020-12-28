@@ -1,0 +1,17 @@
+body {
+   background-repeat:no-repeat;
+   background-size:cover;
+}
+.wrapper{
+    background-color: white;
+    border: 5px solid gray;
+    display: inline-block;
+    padding: 20px;
+
+}
+li {
+    list-style-type: none;
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
