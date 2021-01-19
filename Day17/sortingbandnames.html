@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Band names without Articles</title>
+    <link rel="stylesheet" href="sortband.css">
+</head>
+<body>
+    <div class="list">
+        <ul id = "bands" class="bands"></ul>
+    </div>
+   
+    <script>
+        const bands = ['The Plot in you','Couterparts','An Eye','Next to me','An Old lady','Say anything','Learn new concepts'
+                        ,'Get some more','The University', 'Oh, Silr'];
+        
+        function trimArticles(band) {
+            return band.replace(/^(a |an |the )/i,'').trim();
+        }
+        const sortband = bands.sort((a,b) => trimArticles(a).toLowerCase() > trimArticles(b).toLowerCase() ? 1 : -1);
+        console.log(sortband);
+        document.querySelector("#bands").innerHTML = sortband.map(band => `<li class="list-item">${band}</li>`).join('');
+    </script>
+</body>
+</html>

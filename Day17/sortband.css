@@ -1,0 +1,11 @@
+.list {
+    margin: auto;
+    width: 50%;
+}
+.list-item {
+    border-radius: 5px;
+    border-bottom: 5px solid green;
+}
+ li {
+    list-style-type: none;
+}
