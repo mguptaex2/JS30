@@ -1,0 +1,18 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    background: yellow;
+    font-size: 20px;
+}
+.words {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.line {
+    border-bottom: 2px solid black;
+}
